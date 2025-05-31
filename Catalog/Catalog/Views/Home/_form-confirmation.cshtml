@@ -1,0 +1,144 @@
+﻿@*内容確認ページ*@
+
+@*<div class="panel panel-primary">
+        <div class="panel-body">以下の内容で資料請求を行います、ご確認をお願いします。</div>
+    </div>*@
+<h3 class="me_panel">以下の内容で資料請求を行います、ご確認をお願いします。</h3>
+
+@*<p>ご請求資料</p>
+    <div class="row">
+        <div class="col-sm-7 col-sm-offset-3">
+            <ul>
+                <li ng-repeat="item in metaData.siryouAr">{{item}}</li>
+            </ul>
+        </div>
+    </div>*@
+<p>ご登録内容</p>
+<div class="kakunin">
+    <div class="form-inline">
+        <label for="name-kana" class="col-sm-3 control-label">ご氏名</label>
+        @*<p id="name-kana" class="col-sm-7">{{formData.username}}</p>*@
+        <p class="form-control" style="border-style:hidden;box-shadow:none">{{formData.username_sei}}</p>
+        <p class="form-control" style="border-style:hidden;">{{formData.username_mei}}</p>
+
+    </div>
+
+    <div class="form-inline">
+        <label for="name-kana" class="col-sm-3 control-label">ご氏名　ヨミガナ</label>
+        @*<p id="name-kana" class="col-sm-7">{{formData.namekana}}</p>*@
+        <p class="form-control" style="border-style:hidden;">{{formData.namekana_sei}}</p>
+        <p class="form-control" style="border-style:hidden;">{{formData.namekana_mei}}</p>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="gender" class="col-sm-3 control-label">性別</label>
+        <p id="gender" class="col-sm-7">{{formData.genders}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="age" class="col-sm-3 control-label">年代</label>
+        <p id="age" class="col-sm-7">
+            {{formData.ages}}
+        </p>
+    </div>
+
+    <div class="form-group">
+        <label for="zip" class="col-sm-3 control-label">郵便番号</label>
+        <p id="zip" class="col-sm-7">{{formData.zip}}</p>
+    </div>
+
+    <div class="form-inline">
+        <label for="address" class="col-sm-3 control-label">住所</label>
+        <p class="form-control" style="border-style:hidden;">{{formData.Prefecture}}</p>
+        <p class="form-control" style="border-style:hidden;">{{formData.city}}</p>
+        <p class="form-control" style="border-style:hidden;">{{formData.StreetName}}</p>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="address2" class="col-sm-3 control-label">建物</label>
+        <p id="address2" class="col-sm-7">{{formData.address2}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="col-sm-3 control-label">電話番号</label>
+        <p id="phone" class="col-sm-7">{{formData.phone}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">Eメール</label>
+        <p id="email" class="col-sm-7">{{formData.email}}</p>
+    </div>
+
+    <h3 class="me_panel">ご質問。</h3>
+    <div class="form-group">
+        <p>ご興味のあるサービス。</p>
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-3">
+                <ul>
+                    <li ng-repeat="item in metaData.kysaviceAr">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <p>どなたのために資料を請求。</p>
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-3">
+                <ul>
+                    <li>{{formData.target}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <p>その他質問など。</p>
+        <p id="email" class="col-sm-7 col-sm-offset-3" ng-bind-html="formData.question | lineBreak"></p>
+    </div>
+    <hr />
+    <div class="form-group">
+        <label class="col-sm-5 control-label">個人情報保護に関する同意</label>
+        <p class="col-sm-7"><span ng-show="formData.pasonalinfo">同意する</span><span class="text-danger" ng-show="!formData.pasonalinfo">恐れ入りますが個人情報保護に関する同意が得られない際には、資料請求を受け付けることが出来ません。</span></p>
+    </div>
+    @*<div class="form-group">
+            <label class="col-sm-5 control-label">当協会からの役立つ情報やセミナー案内などの送付を希望しますか？</label>
+            <p class="col-sm-7"><span>{{formData.infome}}</span></p>
+        </div>*@
+
+    <br />
+
+    <div class="form-group row top_margin">
+        <div class="col-sm-3 col-xs-6">
+            <a ui-sref="form.input" class="btn btn-block btn-default">
+                戻る <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </a>
+        </div>
+        <div class="col-xs-6">
+            @* <a class="btn btn-success btn-block" href="" ng-click="saveNewRequest()">資料を請求する</a>*@
+            <a class="btn btn-success btn-block" ng-click="saveNewRequest()">資料を請求する</a>
+
+        </div>
+    </div>
+</div>
+<div id="pardotForm" style="display:none;height:0;">
+   
+        <input type="hidden" name="pname_sei" value="{{formData.username_sei}}">
+        <input type="hidden" name="pname_mei" value="{{formData.username_mei}}">
+        <input type="hidden" name="kana_sei" value="{{formData.namekana_sei}}">
+        <input type="hidden" name="kana_mei" value="{{formData.namekana_mei}}">
+        <input type="hidden" name="sex" value="{{formData.genders}}">
+        <input type="hidden" name="age" value="{{formData.ages}}">
+        <input type="hidden" name="tel" value="{{formData.phone}}">
+        <input type="hidden" name="mail" value="{{formData.email}}">
+        <input type="hidden" name="zipcode" value="{{formData.zip}}">
+        <input type="hidden" name="prefecture" value="{{formData.Prefecture}}">
+        <input type="hidden" name="city" value="{{formData.city}}">
+        <input type="hidden" name="address" value="{{formData.StreetName}}">
+        <input type="hidden" name="house" value="{{formData.address2}}">
+        <input type="hidden" name="comment" value="{{formData.comment}}">
+ 
+
+</div>

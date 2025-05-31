@@ -1,0 +1,33 @@
+﻿<div class="row" >
+    <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+        <div class="hrline"><a ng-href="{{returnlink}}"><img src="../../Images/logo_n01.jpg" alt="" /></a></div>
+        <h2>資料請求・お問い合わせ</h2>
+        <div id="form-container">
+            <div class="row">
+                <div class="page-header text-center">
+                    
+                    <!-- the links to our nested states using relative paths -->
+                    <!-- add the active class if the state matches our ui-sref -->
+                    <div id="status-buttons" class="text-center status-buttons">
+                        @*<a ui-sref-active="active" ui-sref=".selection" ng-click="selectEvent()"><span ng-class=" {'moveok':metaData.moveok}">1</span> 資料選択</a>*@
+                        <a ui-sref-active="active" ui-sref=".input" ng-click="selectEvent()"><span ng-class="{'moveok':metaData.moveok}">1</span> お届先情報入力</a>
+                       
+                        <a ui-sref-active="active" ui-sref=".confirmation" ng-click="selectEvent()"><span ng-class="{'moveok':!inputForm.$invalid}">2</span> 内容確認</a>
+
+                    </div>
+                </div>
+
+
+                <!-- use ng-submit to catch the form submission and use our Angular function -->
+                <form id="signup-form" name="inputForm" class="form-horizontal" novalidate ng-submit="processForm()">
+                    <!-- our nested state views will be injected here -->
+                    <div id="form-views" ui-view></div>
+                </form>
+
+            </div>
+        </div>
+        <!-- show our formData as it is being typed -->
+        
+    </div>
+</div>
+

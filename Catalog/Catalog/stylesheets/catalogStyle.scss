@@ -1,0 +1,461 @@
+﻿/* BASIC STYLINGS
+============================================================================= */
+body                            { padding-top:5px;
+                                  font-family: 'Lucida Grande','Segoe UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',Meiryo,'メイリオ','Helvetica',sans-serif;
+}
+pre                             { margin-bottom:20px; }
+
+/* form styling */
+#form-container                { background:#ffffff;
+                                  margin-bottom:20px;
+    border-radius:5px; }
+#form-container .page-header   { background:#ffffff;
+                                  margin:0;
+                                  padding-top:10px;
+                                 padding-bottom:10px;                                 
+    }
+h2{
+    font-size:24px;
+    color:dodgerblue;
+
+}
+.hrline{
+    margin-left:-15px;
+    margin-right:-15px;
+    border-bottom:1px solid #bbb;
+    padding-bottom:4px;
+}
+
+
+/* numbered buttons */
+.status-buttons                 { 
+        // 偏移を許可したリンク
+    .moveok{
+        background-color:#75e2e2;
+        cursor:pointer;
+    }
+    
+}
+.status-buttons a               {
+    color:#666666;
+    display:inline-block;
+    font-size:12px;
+    margin-right:10px;
+    text-align:center;
+    text-transform:uppercase; 
+    text-decoration:none;
+    cursor:default;
+    // IE でフォーカス時にでる点線を消す
+    outline:none;
+}
+.status-buttons a:hover         {
+    text-decoration:none;
+}
+.status-buttons span            {
+     background:#E8E8E8;
+     display:block;
+     height:30px;
+     margin:0 auto 10px;
+     padding-top:5px;
+     width:30px; 
+    border-radius:50%;
+    color:dimgray;
+}
+
+/* active buttons */
+.status-buttons a.active span   {
+    background:#00BC8C;
+    color:white;
+}
+
+/* ANIMATION STYLINGS
+============================================================================= */
+
+#signup-form            { 
+    position:relative;
+    min-height:400px;
+    overflow:hidden;
+    padding:30px;
+}
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+
+#form-views.ng-enter,
+#form-views.ng-leave      { 
+    position:absolute;
+    left:30px;
+    right:30px;
+    transition:0.5s all ease;
+    -moz-transition:0.5s all ease;
+    -webkit-transition:0.5s all ease; 
+}
+
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+	-moz-animation:slideInRight 0.5s both ease;
+	animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+	-moz-animation:slideOutLeft 0.5s both ease;
+	animation:slideOutLeft 0.5s both ease;   
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(200%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(200%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(200%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+// ラジオボタンの見た目変更
+label.radio-inline {
+    .form-control{
+        height:18px;
+        box-shadow:none;
+        border:none;
+    }
+    input[type='radio']{
+        width:18px;
+
+        background-color:transparent;
+        margin: 0;
+        margin-left: -20px;
+        margin-right:20px;
+
+    }
+               vertical-align:middle;
+               line-height:14px;
+
+}
+
+// チェックボックス
+input[type='checkbox']{
+    width:18px;
+    height:18px;
+    &:focus {
+        outline:0;
+    }
+}
+//
+.caption{
+    .form-group {
+        margin-bottom:0;
+        label {
+            margin-left:-8px;
+            margin-top:2px;
+        }
+    }
+    
+}
+// 住所検索ボタン
+.ar_adsatm{
+    position:relative;
+
+    .ar_adsat {
+        position:absolute;
+    left:200px;
+    top:25px;
+    }
+}
+// ボタン
+.btn:focus , .btn:active{
+    outline:0;
+
+}
+// 確認画面 pタグの位置変更
+.kakunin{
+    p{
+        padding-top:7px;
+        border-style:hidden;
+        box-shadow:none;
+
+    }
+    label {
+        padding-top:7px;
+    }
+}
+// 入力　ok　アイコン
+.checkiocon {
+    text-align:left;
+    margin-left:-20px;
+    visibility:visible;
+    span {
+        font-size:18px;
+        color:#8bba5c;
+        margin-top:6px;
+
+    }
+}
+// 入力　ok　アイコン
+.checkiocons {
+    text-align:left;
+    //margin-left:-20px;
+    visibility:visible;
+   
+        font-size:14px;
+        color:#8bba5c;
+        //margin-top:6px;
+
+}
+.has-ok1 {
+   visibility:hidden;
+}
+
+.mr_chenge{
+   padding-right:4px;
+    padding-left:4px;
+}
+#catrog{
+.thumbnail{
+    .caption{
+        padding:0;
+        padding-left:10px;
+    }
+    &.buttom_cols {
+            min-height:150px;
+    }
+    @media (min-width: 768px) {
+        &.buttom_cols{
+            min-height:240px;
+        }
+        }
+        @media (min-width: 768px) {
+
+            min-height:295px;
+        }
+    margin-bottom:6px;
+    background-color:#fdebd6;
+            input[type='checkbox']{
+                margin:1px 0 0 -20px;
+            }
+                p{
+        margin-left:15px;
+        margin-right:15px;
+        }
+         .panh-header{
+            margin-left:60px;
+            margin-bottom:10px;
+        }
+
+                label{
+        margin-left:4px;
+        margin-right:4px;
+        vertical-align:middle;
+        cursor:pointer;
+        font-weight:normal;
+
+                }
+                .checkbox{
+                    margin-left:40px;
+                    margin-top:0;
+                    margin-right:0;
+                    margin-bottom:10px;
+                    padding-right:15px;
+                }
+    }
+    @media (min-width: 992px) {
+
+    .label_box{
+        height:4em;
+        }
+}
+}
+.title_label{
+    margin-left:-20px;
+}
+.top_margin{
+    margin-top:30px;
+}
+.top_margin2{
+    clear:both;
+    padding-top:40px;
+}
+#surveyarea {
+    .checkbox {
+        min-height:20px;
+        padding-top:0;
+        input[type='checkbox']{
+            margin:1px 0 0 -20px;
+        }
+    }
+    label {
+        margin-top:4px;
+        margin-bottom:4px;
+    }
+}
+// メインメニュー
+.btn-outline-inverse{
+    color:#337ab7;
+    background-color:transparent;
+    border-color:ActiveCaption;
+    min-width:270px;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+.lead {
+    text-align:center;
+       
+}
+// パネル
+.me_panel {
+    background-color:#0088ff;
+    color:#FFF;
+    font-size:12pt;
+    margin:0 -30px 20px;
+    padding:5px 7px 5px;
+   line-height:1.4em;
+   border-radius:4px;
+   clear:both;
+}
+// エラーメッセージ
+.me_error {
+    color:red;
+}
+#pasonalinfo{
+    input[type='checkbox']{
+        margin-top:1px;
+        
+    }
+    label{
+        margin-left:20px;
+       font-weight:normal;
+   }
+}
+   .pinfoError{
+       text-align:center;
+   }
+
+#inputForm{
+    input[type='radio']{
+        margin-top:-2px;
+    }
+    .checkbox {
+        min-height:20px;
+        padding-left:20px;
+        padding-top:5px;
+        input[type='checkbox']{
+            margin:1px 0 0 -20px;
+        }
+    }
+ }
+#privacy {
+    font-size:13pt;
+    line-height:1.8em;
+    p{
+        margin-bottom:12px;
+    }
+   
+}
+// システム用隠しinput
+.meta-hidden{
+    display:none;
+    margin:0;
+    padding:0;
+    height:0;
+}
+.moveng{
+    background-color:#eee;
+    color:#606060;
+    border-color:#ddd;
+    cursor:default;
+    &:hover,&:active,&:focus {
+        background-color:#eee;
+        color:#606060;
+        border-color:#ddd;
+        cursor:default;
+    }
+}
+
+// パンフレット選択エリア
+.panh-area{
+    label{
+        display:block;
+        height:44px;
+    }
+}
+.midasi {
+    font-weight:bold;
+}
+// プライバシー保護　リンク
+.privacylink{
+    a{
+        border-bottom:dashed 1px dodgerblue;
+    }
+}
+// 請求完了画面
+.siryou-end{
+    margin-bottom:100px;
+    text-align:left;
+    line-height:2em;
+}
+.siryou-endtitel{
+    font-size:24pt;
+    margin-bottom:60px;
+}
+.hissu-mark {
+    color:red;
+}
+// 例題
+.reidai{
+    padding-top:6px;
+    color:#606060;
+}
+// 郵便番号
+.ngtmargin{
+    margin-left:-15px;
+}
+.zip-class-a{
+    padding-right:0;
+
+}
+.zip-class-b{
+    padding-left:0;
+    padding-right:0;
+    letter-spacing:-1px;
+    margin-left:-8px;
+    margin-right:-8px;
+}
+.catalog-panel {
+        border-color: transparent;
+        .panel-heading {
+        border: solid #d6e9c6 1px;
+        border-radius: 3px;
+    }
+        .thumbnail{
+           margin:0;
+           /*background: linear-gradient(#05FBFF, #1E00FF);*/
+        }
+    .panel-footer{
+
+        border-top-color:transparent;
+    }
+
+
+}

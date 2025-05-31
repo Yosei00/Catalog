@@ -1,0 +1,340 @@
+﻿<div>
+    <p class="me_error" ng-hide="!metaData.selectflag"> 恐れ入りますが先に請求される資料をご選択ください</p>
+
+
+    <h3 class="me_panel">
+        ご希望の資料をお選びください。
+    </h3>
+    <div class="clearfix">
+        <div id="catrog">
+            @*各種資料*@
+
+            @*ライフエンディングカタログ*@
+            @*<div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon1.png" alt="よりよく生きる 沖縄の終活カタログ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou0" ng-model="formData.siryou[0]" ng-change="siryoCn()">よりよく生きる 沖縄の終活カタログ</label>
+
+                            </div>
+                            <p>
+                                <span class="midasi">全霊園共通の総合カタログ</span>@*<br />ご自身のお墓についてのお悩みだけでなく、ご先祖様のお墓の事や、お位牌の供養に関するお悩みまで、まずは、このカタログで自分に合ったサービスプランを見つけて下さい。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            @*おきなわ霊廟*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon-okinawa.png" alt="おきなわ霊廟カタログ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou1" ng-model="formData.siryou[1]" ng-change="siryoCn()">永代供養・納骨堂「おきなわ霊廟」</label>
+                                </div>
+                                <p>
+                                    <span class="midasi">安置供養からご納骨まで、価値ある永代供養墓のご案内</span>@*<br />おきなわ霊廟の永代供養とは？またどのようなサービスを含んでいるのか？など、皆様からの疑問にお応えし、おきなわ霊廟の仕組みを詳しくご説明いたします。これを読めばメモリアル整備協会の永代供養墓をご理解いただけます。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            @*美ら海*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon-chura.png" alt="海洋散骨 美ら海カタログ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox">
+                                    <input type="checkbox" name="siryou" id="siryou2" ng-model="formData.siryou[2]" ng-change="siryoCn()">
+                                    永代供養・海洋散骨「美ら海」
+                                </label>
+                                </div>
+                                <p>
+                                    <span class="midasi">永代供養と沖縄近海での海洋散骨がセットになったプラン</span>@*<br />沖縄の海が好きで、海洋散骨を希望している方、永代供養と海洋散骨がセットになったプランのご案内です。最期まで自分らしい葬送を検討されている方にご契約を頂いております。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            @*事業案内*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon-zaidan.png" alt="事業案内" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"> <input type="checkbox" name="siryou" id="siryou5" ng-model="formData.siryou[5]" ng-change="siryoCn()">事業案内</label>
+                            </div>
+                            <p>
+                                <span class="midasi">公益財団法人&nbsp;沖縄県メモリアル整備協会事業のご案内</span@*><br />公益財団法人&nbsp;沖縄県メモリアル整備協会の法人概要、事業理念、事業実績をご紹介する事業案内パンフレットです*@
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        @*2段目*@
+            @*宮古島MP*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon-miyako.png" alt="宮古島メモリアルパーク・総合カタログ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou3" ng-model="formData.siryou[3]" ng-change="siryoCn()">宮古島メモリアルパーク・総合カタログ</label>
+                                </div>
+                                <p>
+                                    <span class="midasi">紺碧の与那覇湾が眼下に広がる理想の管理型公園墓地のご案内</span>@*<br />人気の永代供養・樹木葬「花想」をはじめ、美しい花や植栽が彩り豊かな霊園です。宮古空港から車で5分の好立地。2015年には伊良部島をつなぐ「伊良部大橋」が開通し、個性的な文化が魅力の島です。
+                </p>*@
+                            </div>
+                    </div>
+                </div>
+            </div>
+            @*石垣MP*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/icon-isigaki.png" alt="石垣メモリアルパーク・総合カタログ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou4" ng-model="formData.siryou[4]" ng-change="siryoCn()">石垣メモリアルパーク・総合カタログ</label>
+                                </div>
+                                <p>
+                                    <span class="midasi">太陽と緑に抱かれた八重山諸島初の管理型公園墓地のご案内</span>@*<br />新石垣空港から車で約15分のアクセス。お一人様用のお墓「しま風」やお二人様用の樹木葬「花想」など、バリエーションを豊富に取り揃えております。八重山諸島での中心地でもあり、沖縄県内では、本島、西表島に次いで3番目に広い島でもあります。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @*ダミー*@
+            <div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail">
+                    <img src="~/Images/hakajimai.png" alt="墓じまい・改葬供養" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou13" ng-model="formData.siryou[13]" ng-change="siryoCn()">墓じまい・改葬供養</label>
+                            </div>
+                            <p>
+                                <span class="midasi">古くなったお墓、遠隔地の墓所などでお悩みの皆様におすすめします。</span>@*<br />新石垣空港から車で約15分のアクセス。お一人様用のお墓「しま風」やお二人様用の樹木葬「花想」など、バリエーションを豊富に取り揃えております。八重山諸島での中心地でもあり、沖縄県内では、本島、西表島に次いで3番目に広い島でもあります。*@
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        @*3段目*@
+
+            @*結*@
+            <div class="col-sm-6 col-md-6 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/yui.png" alt="結-永代供養家族墓" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou10" ng-model="formData.siryou[10]" ng-change="siryoCn()">結-永代供養家族墓</label>
+                                </div>
+                                <p>
+                                    <span class="midasi">ご案内霊園</span><br />大里メモリアルパーク<br />具志川メモリアルパーク<br />名護やんばるメモリアルパーク@*自分らしいエンデｲングの在り方を求めて増加する生前契約。その実例をタイプ別にまとめ、理想的なエンデｲングへと導くハンドブックです。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @*花想*@
+            <div class="col-sm-6 col-md-6 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/hanaumui.png" alt="花想-永代供養樹木葬" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox">
+                                    <input type="checkbox" name="siryou" id="siryou11" ng-model="formData.siryou[11]" ng-change="siryoCn()">
+                                    花想（はなうむい）-永代供養樹木葬
+                                </label>
+                                </div>
+                                <p>
+                                    <span class="midasi">ご案内霊園</span><br />宮古島メモリアルパーク<br />石垣メモリアルパーク<br /><br />@*お墓じまいの実例をシチュエーション別に分類し、遺骨の改葬からご納骨までのながれを写真付きでわかりやすくご説明。また改葬にかかる全費用を詳細に掲載。改葬をご検討のお客様、必見の１冊です。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            @*4段目*@
+
+
+
+
+            @*位牌永代供養*@
+            <div class="col-sm-6 col-md-6 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/eidaikuyou.png" alt="位牌永代供養" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou12" ng-model="formData.siryou[12]" ng-change="siryoCn()">位牌永代供養</label>
+                                </div>
+                                <p>
+                                    <span class="midasi">大切なご先祖のお位牌、<br />ご先祖の霊を永遠にご供養いたします。</span><br /><br />@*沖縄県内に7ヵ所ある各メモリアルパーク。霊園周辺環境のおすすめ観光スポットやグルメ情報を職員がご紹介。*@
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            @*エンディングレシピ*@
+            @*<div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/icon3a.png" alt="自分らしいエンディングレシピ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou6" ng-model="formData.siryou[6]" ng-change="siryoCn()">自分らしいエンディングレシピ</label>
+                            </div>
+                            <p>
+                                <span class="midasi">生前契約のすすめ</span><br /><br /><br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+
+            @*改装・墓じまいケースタディ*@
+            @*<div class="col-sm-6 col-md-4 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/icon2.png" alt="改葬・墓じまいケースタディ" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox">
+                                    <input type="checkbox" name="siryou" id="siryou7" ng-model="formData.siryou[7]" ng-change="siryoCn()">
+                                    改葬・墓じまいケースタディ
+                                </label>
+                            </div>
+                            <p>
+                                <span class="midasi">お墓じまいの実例をご紹介</span><br /><br /><br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            @*ロケーションガイド*@
+            <div class="col-sm-6 col-md-6 mr_chenge">
+                <div class="thumbnail buttom_cols">
+                    <img src="~/Images/icon4a.png" alt="ロケーションガイド" />
+                    <div class="caption">
+                        <div class="form-group">
+                            <div class="label_box">
+
+                                <label class="checkbox"><input type="checkbox" name="siryou" id="siryou8" ng-model="formData.siryou[8]" ng-change="siryoCn()">ロケーションガイド</label>
+                            </div>
+                            <p>
+                                <span class="midasi">霊園周辺の見どころをご紹介</span><br /><br /><br />@*沖縄県内に7ヵ所ある各メモリアルパーク。霊園周辺環境のおすすめ観光スポットやグルメ情報を職員がご紹介。*@
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*メモリアルノート*@
+            @*<div class="col-sm-6 col-md-3 mr_chenge">
+            <div class="thumbnail buttom_cols">
+                <img src="~/Images/icon6a.png" alt="メモリアルノート" />
+                <div class="caption">
+                    <div class="form-group">
+                        <div class="label_box">
+
+                            <label class="checkbox"><input type="checkbox" name="siryou" id="siryou9" ng-model="formData.siryou[9]" ng-change="siryoCn()">メモリアルノート</label>
+                            </div>
+                            <p>
+                                <span class="midasi">@*解りやすい、書きやすい。<br />オリジナル エンディングノート</span>@*<br />終活のスタートは、エンディングノートから。大切な親族、友人のアドレス帳としても預金や保険、カードなどの備忘録としてお使いいただく事もお勧めです
+                            </p>
+
+                        </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+        </div><!--catalog-->
+    </div>
+
+
+    @*カタログ選択　ここまで*@
+        <br />
+        <h3 class="me_panel">現在ご興味のあるサービスをお選びください。</h3>
+
+        <div id="surveyarea">
+            @*アンケート*@
+            <div class="form-group">
+                <div class="col-sm-6" ng-repeat="item2 in metaData.quesiton">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="formData.situmon[$index]" ng-change="kysaviceCn($index)">
+                            &nbsp;{{item2}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    
+
+
+        <div class="form-group top_margin2">
+            <div>
+                <div class="col-sm-3 col-xs-6">
+                    <a href="{{metaData.linkURL}}" class="btn btn-block btn-default">
+                        TOPへ戻る<span class="glyphicon glyphicon-circle-arrow-left"></span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <button ui-sref="form.input" class="btn btn-block btn-info" ng-click="selectEvent()" ng-class="{'moveng':!metaData.moveok}">
+                        次へ進む <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                    </button>
+                    <p class="me_error" ng-hide="!metaData.selectflag"> 恐れ入りますが先に請求される資料をご選択ください</p>
+                </div>
+        </div>
+    </div>
+    @*契約者情報が入力完了済みflag 上部リンクメニューの制御に使用*@
+    <div class="meta-hidden"><input type="text" name="hiddenflag" ng-model="metaData.hidenflag" required></div>
+</div>

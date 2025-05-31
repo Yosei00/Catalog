@@ -1,0 +1,418 @@
+﻿<h3 class="me_panel">
+    お送りさせて頂く資料。
+</h3>
+
+
+<div class="col-sm-6 col-xs-12 col-sm-offset-3">
+    <div class="panel panel-success catalog-panel">
+        <div class="panel-heading">お供養ガイドブック</div>
+        <div class="panel-body">
+            <div class="thumbnail">
+                <img src="~/Images/catalog_2017.jpg" alt="okuyou guidebook" />
+            </div>
+            
+        </div>
+        <div class="panel-footer">永代供養や海洋散骨や家族墓、位牌供養・改葬墓じまいなど
+            すべてのプランを紹介した パンフレットをお送りいたします。</div>
+    </div>
+   
+
+</div>
+@*<div class="col-sm-6 col-xs-12">
+    <div class="panel panel-success catalog-panel">
+        <div class="panel-heading">オリジナル エンディングノート</div>
+        <div class="panel-body">
+            <div class="thumbnail">
+            <img src="~/Images/note_present.jpg" alt="orignal ending note" />
+            </div>
+            
+
+        </div>
+        <div class="panel-footer">【Web限定特典】インターネットで資料請求の方に、今なら先着100名様に
+            オリジナル「エンディングノート（メモリアルノート）」をプレゼント致します。</div>
+    </div>
+
+</div>*@
+
+
+<div>
+    <h3 class="me_panel">資料送付先の情報をご記入ください。</h3>
+    <div id="inputForm">
+        <div class="form-group">
+            <label for="username_sei" class="col-sm-3 control-label">
+                ご氏名(全角)<span class="hissu-mark" ng-show="inputForm.username.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.username.$invalid"></span>
+            </label>
+            <div class="col-sm-8 form-inline" ng-class="{'has-error': inputForm.username.$touched && (inputForm.username.$invalid || inputForm.username.$invalid)}">
+                <input type="text" class="form-control" name="username_sei" placeholder="姓" ng-model="formData.username_sei" required ng-blur="nameInputEvent()">
+
+
+                <input type="text" class="form-control" name="username_mei" placeholder="名" ng-model="formData.username_mei" required ng-blur="nameInputEvent()">
+
+                <input type="hidden" class="form-control" style="display:none;padding:0;border:none" name="username" ng-model="formData.username" required ng-maxlength="50">
+                <div ng-if="inputForm.username.$error || inputForm.username.$error">
+                    <div ng-messages="inputForm.username.$error" class="help-inline text-danger" ng-if="inputForm.username_mei.$touched">
+                        <div ng-message="required">必須項目です入力をお願いします</div>
+                        <div ng-message="maxlength">50文字以内でお願いします</div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-xs-1 checkiocon" ng-class="{'has-ok1':inputForm.username.$invalid }">
+                    <span class="glyphicon glyphicon-ok checkiocon" ng-class="{'has-ok1':inputForm.username.$invalid }"></span>
+                </div>*@
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）山田　太郎
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="namekana" class="col-sm-3 control-label">ご氏名　ヨミガナ<span class="hissu-mark" ng-show="inputForm.namekana.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.namekana.$invalid"></span></label>
+
+            <div class="col-sm-8 form-inline" ng-class="{'has-error':inputForm.namekana.$touched && inputForm.namekana.$invalid}">
+                <input type="text" class="form-control" name="namekana_sei" placeholder="セイ" ng-model="formData.namekana_sei" required ng-blur="namekanaInputEvent()">
+
+
+                <input type="text" class="form-control" name="namekana_mei" placeholder="メイ" ng-model="formData.namekana_mei" required ng-blur="namekanaInputEvent()">
+
+                <input type="hidden" class="form-control" style="display:none;padding:0;border:none" name="namekana" ng-model="formData.namekana" required ng-maxlength="50">
+                <div ng-messages="inputForm.namekana.$error" class="help-inline text-danger" ng-if="inputForm.namekana_mei.$touched">
+                    <div ng-message="required">必須項目です入力をお願いします</div>
+                    <div ng-message="maxlength">50文字以内でお願いします</div>
+
+                </div>
+
+            </div>
+            @*<div class="col-xs-1 checkiocon" ng-class="{'has-ok1':inputForm.namekana.$invalid }">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </div>*@
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）ヤマダ　タロウ
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="genders" class="col-sm-3 control-label">性別</label>
+
+            <div id="genders" class="col-sm-9">
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="genders" value="男性" ng-model="formData.genders"> 男性
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="genders" value="女性" ng-model="formData.genders"> 女性
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ages" class="col-sm-3 control-label">年代</label>
+            <div id="ages" class="col-sm-9">
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="20代" ng-model="formData.ages"> ～20代
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="30代" ng-model="formData.ages"> 30代
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="40代" ng-model="formData.ages"> 40代
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="50代" ng-model="formData.ages"> 50代
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="60代" ng-model="formData.ages"> 60代
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="70代" ng-model="formData.ages"> 70代
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" class="form-control" name="ages" value="80代" ng-model="formData.ages"> 80代～
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="zip" class="col-sm-3 control-label">郵便番号<span class="hissu-mark" ng-show="inputForm.zip.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.zip.$invalid"></span></label>
+            <div ng-class="{'has-error': inputForm.zip.$invalid && inputForm.zip.$touched}">
+                <div class="col-sm-9" style="margin-left:-14px;">
+                    <div class="col-md-5 col-sm-4 col-xs-6">
+
+                        <input type="text" class="form-control zip-class-a" id="zip" name="zip" ng-model="formData.zip" required zipmatch-directive>
+
+                    </div>
+
+                    <div class="col-xs-5">
+                        <a class="btn btn-info ngtmargin" id="addsrach" ng-click="addsrach()">郵便番号から住所検索</a>
+                    </div>
+                    @* jquery api にデータを渡す為のフィールド*@
+                    <input type="text" id="postcode1" ng-model="metaData.postcode1" style="display:none;padding:0;border:none" zip-directive><input type="text" id="postcode2" ng-model="metaData.postcode2" style="display:none;padding:0;border:none" zip-directive />
+
+                </div>
+
+            </div>
+            <div ng-messages="inputForm.zip.$error" class="help-inline text-danger col-xs-12 col-sm-9 col-sm-offset-3" ng-if="inputForm.zip.$touched">
+                <div ng-message="required">必須項目です入力をお願いします</div>
+                <div ng-message="orError">郵便番号では無いようです</div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）123-4567
+            </div>
+
+
+        </div>
+
+        <div class="form-group">
+
+            <label class="col-sm-3 control-label">ご住所</label>
+            <div class="col-sm-8 hidden-xs"><span style="display:block;height:36px;"></span></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">都道府県<span class="hissu-mark" ng-show="inputForm.Prefecture.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.Prefecture.$invalid"></span></label>
+            <div class="col-sm-3" ng-class="{'has-error':inputForm.Prefecture.$touched && inputForm.Prefecture.$invalid}">
+                <select class="form-control" id="Prefecture" name="Prefecture" ng-model="formData.Prefecture" ng-options="pref for pref in metaData.PrefectureList track by pref" required>
+                    <option value="">選択してください</option>
+                </select>
+            </div>
+            <div ng-messages="inputForm.Prefecture.$error" class="help-inline text-danger col-xs-12 col-sm-9 col-sm-offset-3" ng-if="inputForm.Prefecture.$touched">
+                <div ng-message="required">必須項目です選択して下さい</div>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-sm-3 control-label">市区町村<span class="hissu-mark" ng-show="inputForm.city.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.city.$invalid"></span></label>
+            <div class="col-sm-4" ng-class="{'has-error':inputForm.city.$touched && inputForm.city.$invalid}">
+                <input type="text" class="form-control" id="city" name="city" ng-model="formData.city" required>
+            </div>
+
+
+            <div ng-messages="inputForm.city.$error" class="help-inline text-danger col-xs-12 col-sm-9 col-sm-offset-3" ng-if=" inputForm.city.$touched">
+                <div ng-message="required">必須項目です選択して下さい</div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）那覇市
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="col-sm-3 control-label">町名・番地<span class="hissu-mark" ng-show="inputForm.StreetName.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.StreetName.$invalid"></span></label>
+            <div class="col-sm-4" ng-class="{'has-error':inputForm.StreetName.$touched && inputForm.StreetName.$invalid}">
+                <input type="text" class="form-control" id="streetname" name="StreetName" ng-model="formData.StreetName" required convertm-toascii>
+            </div>
+
+
+            <div ng-messages="inputForm.StreetName.$error" class="help-inline text-danger col-xs-12 col-sm-9 col-sm-offset-3" ng-if=" inputForm.StreetName.$touched">
+                <div ng-message="required">必須項目です選択して下さい</div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）泉崎1-2-3
+            </div>
+
+        </div>
+
+        @*<div class="form-group">
+
+
+                <div class="col-sm-8" ng-class="{'has-error':inputForm.address.$touched && inputForm.address.$invalid}">
+
+
+                    <input type="text" class="form-control" id="address" name="address" ng-model="formData.address" required ng-maxlength="100" ng-minlength="5" address-directive convertm-toascii>
+                    <div ng-messages="inputForm.address.$error" class="help-inline text-danger" ng-if="inputForm.address.$touched">
+                        <div ng-message="required">必須項目です入力をお願いします</div>
+                        <div ng-message="minlength">必須項目です入力をお願いします</div>
+                        <div ng-message="maxlength">100文字以内でお願いします</div>
+                    </div>
+
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                    例）沖縄県那覇市泉崎1-2-3
+                </div>
+
+            </div>*@
+        <div class="form-group">
+            <label for="address2" class="col-sm-3 control-label">建物</label>
+            <div ng-class="{'has-error':inputForm.address2.$touched && inputForm.address2.$invalid}">
+
+                <div class="col-sm-8">
+
+                    <input type="text" class="form-control" name="address2" ng-model="formData.address2" ng-maxlength="100" convertm-toascii>
+                    <div ng-messages="inputForm.address2.$error" class="help-inline text-danger" ng-if="inputForm.address2.$touched">
+                        <div ng-message="maxlength">100文字以内でお願いします</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）○○マンション 101号室
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="phone" class="col-sm-3 control-label">電話番号<span class="hissu-mark" ng-show="inputForm.phone.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.phone.$invalid"></span></label>
+            <div class="col-sm-4">
+                <div ng-class="{'has-error':inputForm.phone.$touched && inputForm.phone.$invalid}">
+                    <input type="text" class="form-control" name="phone" ng-model="formData.phone" phone-custom-directive required>
+                    <div ng-messages="inputForm.phone.$error" class="help-inline text-danger" ng-if="inputForm.phone.$touched">
+                        <div ng-message="required">必須項目です入力をお願いします</div>
+                        <div ng-message="orError">電話番号ではない様です</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）098-123-4567
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Eメール<span class="hissu-mark" ng-show="inputForm.email.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.email.$invalid"></span></label>
+            <div class="col-sm-8">
+                <div ng-class="{'has-error':inputForm.email.$touched && inputForm.email.$invalid}">
+
+                    <input type="email" class="form-control" name="email" autocomplete="off" ng-model="formData.email" required ng-maxlength="100" @*mailcomp-directive*@>
+                    <div ng-messages="inputForm.email.$error" class="help-inline text-danger" ng-if="inputForm.email.$touched">
+                        <div ng-message="required">必須項目です入力をお願いします</div>
+                        <div ng-message="maxlength">100文字以内でお願いします</div>
+                        <div ng-message="email">メールアドレスではない様です</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-xs-12 reidai">
+                例）mymail@abcd.com
+            </div>
+
+        </div>
+        @*<div class="form-group">
+            <label for="email2" class="col-sm-3 control-label">Eメール再入力<span class="hissu-mark" ng-show="inputForm.email2.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.email2.$invalid"></span></label>
+            <div class="col-sm-8">
+                <div ng-class="{'has-error':inputForm.email2.$touched && inputForm.email2.$invalid }">
+
+                    <input type="email" class="form-control" name="email2" autocomplete="off" ng-model="formData.email2" required mailcomp-directive>@*ng-keyup="mailevnt()"*@
+                    @*<div ng-messages="inputForm.email2.$error" class="help-inline text-danger" ng-if="inputForm.email2.$touched">
+                        <div ng-message="required">必須項目です入力をお願いします</div>
+                        <div ng-message="orError">確認の為同一のメールアドレスを入力してください</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>*@
+        <hr />
+
+        <h3 class="me_panel">ご質問</h3>
+        <label class="col-sm-11 col-sm-offset-1 control-label" style="text-align:left">現在ご興味のあるサービスをお選びください</label>
+
+        <div id="surveyarea">
+            @*アンケート*@
+            <div class="form-group">
+                <label for="quest" class="col-sm-3 control-label">1つ以上選択<span class="hissu-mark" ng-show="inputForm.quest.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.quest.$invalid"></span></label>
+                <div class="col-sm-9 hidden-xs" style="height:36px;"></div>
+                <div class="=col-sm-10 col-sm-offset-2 form-inline">
+                    <div class="col-sm-6" ng-repeat="item2 in metaData.quesiton">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="formData.situmon[$index]" ng-change="kysaviceCn($index)">
+                                &nbsp;{{item2}}
+                            </label>
+                        </div>
+                    </div>
+                    <input type="hidden" style="display:none;height:0;" name="quest" id="quest" ng-model="metaData.quest" required>
+                </div>
+
+            </div>
+            <div ng-messages="inputForm.quest.$error" class="col-sm-10 col-sm-offset-2 help-inline text-danger" ng-if="inputForm.quest.$touched">
+                <div ng-message="required">必須項目です選択をお願いします</div>
+            </div>
+
+
+        </div>
+
+        <label class="col-sm-11 col-sm-offset-1 control-label" style="text-align:left">どなたのために資料を請求していますか。</label>
+
+        <div id="surveyarea">
+            @*アンケート*@
+            <div class="form-group">
+                <label for="target" class="col-sm-3 control-label">1つ選択</label>
+                <div class="col-sm-9 hidden-xs" style="height:36px;"></div>
+                <div class="col-sm-7 col-sm-offset-2 form-inline">
+                    <div class="col-sm-4 radio" ng-repeat="item3 in metaData.targetList">
+                        <label>
+                            <input type="radio" ng-model="$parent.formData.target" value="{{item3}}" />&nbsp;{{item3}}
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="question" class="col-sm-11 col-sm-offset-1 control-label" style="text-align:left">その他質問などがあればご記入ください。</label>
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                <textarea name="question" class="form-control" rows="3" ng-model="formData.question"></textarea>
+            </div>
+
+        </div>
+
+        <hr />
+        <div class="alert alert-info privacylink">
+
+            お申し込みいただいた個人情報については、「<a ui-sref="form.privacypolicy" ng-click="selectEvent()">個人情報保護ポリシー(沖縄県メモリアル整備協会)</a>」に基づき、厳正に取り扱いいたします。
+
+        </div>
+        <div class="form-group">
+            <label for="pasonalinf" class="col-sm-5 control-label">個人情報保護に関する同意<span class="hissu-mark" ng-show="inputForm.pasonalinfo.$invalid">※</span><span class="glyphicon glyphicon-ok checkiocons" ng-show="!inputForm.pasonalinfo.$invalid"></span></label>
+
+            <div id="pasonalinf" class="col-sm-7  col-xs-11">
+                <label class="checkbox">
+                    <input type="checkbox" name="pasonalinfo" value="yes" ng-model="formData.pasonalinfo" required>&nbsp;同意する
+                </label>
+
+            </div>
+            <div ng-messages="inputForm.pasonalinfo.$error" class="help-inline text-danger" ng-if="inputForm.pasonalinfo.$touched">
+                <div class="pinfoError" ng-message="required">恐れ入りますが資料請求の申し込みには個人情報保護に関する同意が必要となります</div>
+            </div>
+
+        </div>
+
+        @*<div class="form-group">
+                <label for="infome" class="col-sm-5 control-label">当協会からの役立つ情報やセミナー案内などの送付を希望しますか？</label>
+
+                <div id="infome" class="col-sm-7 col-xs-11">
+                    <label class="radio-inline">
+                        <input type="radio" class="form-control" name="infome" value="希望する" ng-model="formData.infome"> &nbsp;希望する
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" class="form-control" name="infome" value="希望しない" ng-model="formData.infome"> &nbsp;希望しない
+                    </label>
+
+                </div>
+            </div>*@
+    </div>
+
+
+    <br />
+    <div class="form-group row top_margin">
+        <div class="col-sm-3 col-xs-5">
+            <a href="{{metaData.linkURL}}" class="btn btn-block btn-default">
+                TOPへ戻る<span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </a>
+
+        </div>
+        <div class="col-xs-6">
+            <a ui-sref="form.confirmation" class="btn btn-block btn-info" ng-click="selectEvent()" ng-class="{'moveng':inputForm.$invalid}">
+                次に進む <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+@*<pre>
+    {{formDat | json}}
+
+    </pre>*@
+
